@@ -1,0 +1,33 @@
+/*
+ * Copyright (c) 2017-2018 The Linux Foundation. All rights reserved.
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 and
+ * only version 2 as published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ */
+
+#include "../../../../arm64/boot/dts/qcom/sdw3100-msm8909w-1gb-wtp.dts"
+#include "custom-overlay-lcd.dtsi"
+#include "custom-overlay-tp.dtsi"
+#include "custom-overlay-key.dtsi"
+#include "custom-overlay-audio.dtsi"
+#include "custom-overlay-haptics.dtsi"
+#include "custom-overlay-charge.dtsi"
+#include "custom-overlay-nfc.dtsi"
+
+/ {
+	model = "Qualcomm Technologies, Inc. MSM8909W BG 1GB WTP SDW3100, Coralia";
+	compatible = "qcom,msm8909-mtp", "qcom,msm8909", "qcom,mtp";
+	qcom,msm-id =   <245 0>,
+			<258 0>,
+			<275 0>,
+			<300 0>;
+	qcom,board-id = <8 0xf>;
+	qcom,pmic-id =  <0x0001001b 0x0 0x0 0x0>,
+			<0x0001011b 0x0 0x0 0x0>;
+};

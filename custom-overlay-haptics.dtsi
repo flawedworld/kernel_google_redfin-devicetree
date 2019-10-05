@@ -1,0 +1,201 @@
+
+&pm660_haptics {
+	qcom,actuator-type = "lra";
+	qcom,vmax-mv = <2680>;
+	qcom,ilim-ma = <60>;
+	qcom,play-rate-us = <4180>;
+	qcom,lra-auto-resonance-mode = "qwd";
+	qcom,lra-resonance-sig-shape = "sine";
+	qcom,lra-long-wave-add-vmax-mv = <915>;
+	qcom,lra-long-wave-periods = <3>;
+	qcom,lra-long-wave-append-support;
+	qcom,lra-allow-variable-play-rate;
+	qcom,lra-allow-short-wave-overdrive;
+	wf_0 {
+		/* root-mean-vpeak 3.6v periods 8 shortwave 31*116(3596) */
+		qcom,effect-id = <0>;
+		qcom,wf-vmax-mv = <3595>;
+		qcom,wf-pattern = [3e 3e 3e 3e 3e 3e 3e 3e];
+		qcom,wf-play-rate-us = <4180>;
+		qcom,lra-auto-resonance-disable;
+	};
+	wf_1 {
+		/* root-mean-vpeak 2.5v periods 8*8*2(128) 2.5v break 11*2*116(2556) */
+		qcom,effect-id = <1>;
+		qcom,wf-vmax-mv = <2556>;
+		qcom,wf-pattern = [56 56 56 56 56 56 56 56];
+		qcom,wf-brake-pattern = [02 02 02 02];
+		qcom,wf-repeat-count = <8>;
+		qcom,wf-s-repeat-count = <2>;
+		qcom,wf-play-rate-us = <4180>;
+		qcom,lra-auto-resonance-disable;
+	};
+
+	wf_2 {
+		/* root-mean-vpeak 2.5v periods 8*8*2(128) 2.5v no break 11*2*116(2552) */
+		qcom,effect-id = <2>;
+		qcom,wf-vmax-mv = <2556>;
+		qcom,wf-pattern = [56 56 56 56 56 56 56 56];
+		qcom,wf-repeat-count = <8>;
+		qcom,wf-s-repeat-count = <2>;
+		qcom,wf-play-rate-us = <4180>;
+		qcom,lra-auto-resonance-disable;
+	};
+	wf_3 {
+		/* root-mean-vpeak 2.5v periods 8*8*4(256) 2.5v no break 11*2*116(2552) */
+		qcom,effect-id = <3>;
+		qcom,wf-vmax-mv = <2556>;
+		qcom,wf-pattern = [56 56 56 56 56 56 56 56];
+		qcom,wf-repeat-count = <8>;
+		qcom,wf-s-repeat-count = <4>;
+		qcom,wf-play-rate-us = <4180>;
+		qcom,lra-auto-resonance-disable;
+	};
+	wf_4 {
+		/* root-mean-vpeak 2.5v periods 8  2.5v no break 11*2*116(2552) */
+		qcom,effect-id = <4>;
+		qcom,wf-vmax-mv = <2556>;
+		qcom,wf-pattern = [56 56 56 56 56 56 56 56];
+		qcom,wf-play-rate-us = <4180>;
+		qcom,lra-auto-resonance-disable;
+	};
+	wf_5 {
+		/* root-mean-vpeak 2.5v periods 8*4(32) 2.5v no break 11*2*116(2552) */
+		qcom,effect-id = <5>;
+		qcom,wf-vmax-mv = <2556>;
+		qcom,wf-pattern = [56 56 56 56 56 56 56 56];
+		qcom,wf-s-repeat-count = <4>;
+		qcom,wf-play-rate-us = <4180>;
+		qcom,lra-auto-resonance-disable;
+	};
+
+
+	wf_6 {
+		/* root-mean-vpeak 2.5v periods 16 break 3.6v 11*2*116(2552) */
+		qcom,effect-id = <6>;
+		qcom,wf-vmax-mv = <3595>;
+		qcom,wf-pattern = [56 56 56 56 56 56 56 56];
+		qcom,wf-s-repeat-count = <2>;
+		qcom,wf-brake-pattern = [02 02 02 02];
+		qcom,wf-play-rate-us = <4180>;
+		qcom,lra-auto-resonance-disable;
+	};
+	wf_7 {
+		/* root-mean-vpeak 1.8v periods 16 break 3.6v  8*2*116(1856) */
+		qcom,effect-id = <7>;
+		qcom,wf-vmax-mv = <3595>;
+		qcom,wf-pattern = [50 50 50 50 50 50 50 50];
+		qcom,wf-s-repeat-count = <2>;
+		qcom,wf-brake-pattern = [02 02 02 02];
+		qcom,wf-play-rate-us = <4180>;
+		qcom,lra-auto-resonance-disable;
+	};
+	wf_8 {
+		/* root-mean-vpeak 3.6 periods 8 break 3.6  30*116(3596) */
+		qcom,effect-id = <8>;
+		qcom,wf-vmax-mv = <3595>;
+		qcom,wf-pattern = [3e 3e 3e 3e 3e 3e 3e 3e];
+		qcom,wf-brake-pattern = [02 02 02 02];
+		qcom,wf-play-rate-us = <4180>;
+		qcom,lra-auto-resonance-disable;
+	};
+	wf_9 {
+		/* root-mean-vpeak 3.4 periods 8 break 3.4  30*116(3480) */
+		qcom,effect-id = <9>;
+		qcom,wf-vmax-mv = <3480>;
+		qcom,wf-pattern = [3c 3c 3c 3c 3c 3c 3c 3c];
+		qcom,wf-brake-pattern = [02 02 02 02];
+		qcom,wf-play-rate-us = <4180>;
+		qcom,lra-auto-resonance-disable;
+	};
+	wf_10 {
+		/* root-mean-vpeak 3.2v periods 8 break 3.2v  27*116(3132) */
+		qcom,effect-id = <10>;
+		qcom,wf-vmax-mv = <3132>;
+		qcom,wf-pattern = [36 36 36 36 36 36 36 36];
+		qcom,wf-brake-pattern = [02 02 02 02];
+		qcom,wf-play-rate-us = <4180>;
+		qcom,lra-auto-resonance-disable;
+	};
+	wf_11 {
+		/* root-mean-vpeak 3.0v periods 8 break 3.0v  26*116(3016) */
+		qcom,effect-id = <11>;
+		qcom,wf-vmax-mv = <3016>;
+		qcom,wf-pattern = [34 34 34 34 34 34 34 34];
+		qcom,wf-brake-pattern = [02 02 02 02];
+		qcom,wf-play-rate-us = <4180>;
+		qcom,lra-auto-resonance-disable;
+	};
+	wf_12 {
+		/* root-mean-vpeak 2.8v periods 8 break 2.8v  25*116(2900) */
+		qcom,effect-id = <12>;
+		qcom,wf-vmax-mv = <2900>;
+		qcom,wf-pattern = [32 32 32 32 32 32 32 32];
+		qcom,wf-brake-pattern = [02 02 02 02];
+		qcom,wf-play-rate-us = <4180>;
+		qcom,lra-auto-resonance-disable;
+	};
+	wf_13 {
+		/* root-mean-vpeak 2.6v periods 8 break 2.6v  23*116(2668) */
+		qcom,effect-id = <13>;
+		qcom,wf-vmax-mv = <2688>;
+		qcom,wf-pattern = [2e 2e 2e 2e 2e 2e 2e 2e];
+		qcom,wf-brake-pattern = [02 02 02 02];
+		qcom,wf-play-rate-us = <4180>;
+		qcom,lra-auto-resonance-disable;
+	};
+	wf_14 {
+		/* root-mean-vpeak 2.4v periods 8 break 2.4v  21*116(2436) */
+		qcom,effect-id = <14>;
+		qcom,wf-vmax-mv = <2436>;
+		qcom,wf-pattern = [2a 2a 2a 2a 2a 2a 2a 2a];
+		qcom,wf-brake-pattern = [02 02 02 02];
+		qcom,wf-play-rate-us = <4180>;
+		qcom,lra-auto-resonance-disable;
+	};
+	wf_15 {
+		/* root-mean-vpeak 2.2v periods 8 break 2.2v  19*116(2204) */
+		qcom,effect-id = <15>;
+		qcom,wf-vmax-mv = <2204>;
+		qcom,wf-pattern = [26 26 26 26 26 26 26 26];
+		qcom,wf-brake-pattern = [02 02 02 02];
+		qcom,wf-play-rate-us = <4180>;
+		qcom,lra-auto-resonance-disable;
+	};
+	wf_16 {
+		/* root-mean-vpeak 2.0 periods 8 break 2.0  18*116(2088) */
+		qcom,effect-id = <16>;
+		qcom,wf-vmax-mv = <2088>;
+		qcom,wf-pattern = [24 24 24 24 24 24 24 24];
+		qcom,wf-brake-pattern = [02 02 02 02];
+		qcom,wf-play-rate-us = <4180>;
+		qcom,lra-auto-resonance-disable;
+	};
+	wf_17 {
+		/* root-mean-vpeak 3.4 periods 8 no break 3.4  30*116(3480) */
+		qcom,effect-id = <17>;
+		qcom,wf-vmax-mv = <3480>;
+		qcom,wf-pattern = [3c 3c 3c 3c 3c 3c 3c 3c];
+		qcom,wf-play-rate-us = <4180>;
+		qcom,lra-auto-resonance-disable;
+	};
+	wf_18 {
+		/* root-mean-vpeak 3.6 periods 2 break 3.6 periods  1  31*116(3596) */
+		qcom,effect-id = <18>;
+		qcom,wf-vmax-mv = <3595>;
+		qcom,wf-pattern = [3e 3e];
+		qcom,wf-brake-pattern = [02];
+		qcom,wf-play-rate-us = <4180>;
+		qcom,lra-auto-resonance-disable;
+	};
+	wf_19 {
+		/* root-mean-vpeak 1.8~2.0(1.856) periods 2 break 3.48 periods  1  30*116(3480) */
+		qcom,effect-id = <19>;
+		qcom,wf-vmax-mv = <3595>;
+		qcom,wf-pattern = [1c 1c];
+		qcom,wf-brake-pattern = [02];
+		qcom,wf-play-rate-us = <4180>;
+		qcom,lra-auto-resonance-disable;
+	};
+};
+

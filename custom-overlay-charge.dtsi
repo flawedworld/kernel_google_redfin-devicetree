@@ -1,0 +1,46 @@
+
+&mtp_batterydata {
+	qcom,batt-id-range-pct = <15>;
+	#include "custom-overlay-charge-fg-batterydata-380mah.dtsi"
+	#include "batterydata_Jiade_4p45v_atl_570mAH_PMW3100.dtsi"
+	#include "batterydata_Jiade_4p4v_atl_553mAH_PMW3100.dtsi"
+	#include "batterydata_Jiade_4p45v_aprs_595mAH_PMW3100.dtsi"
+};
+
+&pm660_fg {
+	qcom,fg-chg-term-current = <20>;
+	qcom,fg-force-load-profile;
+	qcom,fg-cutoff-voltage = <3400>;
+};
+
+&pm660_charger{
+	qcom,fv-max-uv = <4450000>;
+};
+
+&thermal_zones {
+	cpu0-2-step {
+		trips {
+			cpu0-2-step-trip {
+				temperature = <95000>;
+			};
+		};
+	};
+	cpu1-3-step {
+		trips {
+			cpu1-3-step-trip {
+				temperature = <95000>;
+			};
+		};
+	};
+	case-therm-step {
+		trips {
+			modem_mon_trip0: modem-mon-trip0 {
+				temperature = <80000>;
+				};
+
+			modem_mon_trip1: modem-mon-trip1 {
+				temperature = <85000>;
+				};
+		};
+	};
+};

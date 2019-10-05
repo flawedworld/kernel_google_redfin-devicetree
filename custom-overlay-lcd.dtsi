@@ -1,0 +1,45 @@
+
+#include "custom-overlay-lcd-dsi-panel-edo-h162-320p-cmd.dtsi"
+#include "custom-overlay-lcd-dsi-panel-edo-rm69090-368p-cmd.dtsi"
+#include "custom-overlay-lcd-dsi-panel-truly-rm69090-368p-cmd.dtsi"
+
+&dsi_pm660_panel_pwr_supply {
+	qcom,panel-supply-entry@0 {
+		reg = <0>;
+		qcom,supply-name = "vdd";
+		qcom,supply-min-voltage = <1800000>;
+		qcom,supply-max-voltage = <1800000>;
+		qcom,supply-enable-load = <100000>;
+		qcom,supply-disable-load = <100>;
+	};
+	/delete-node/ qcom,panel-supply-entry@2;
+};
+
+&mdss_dsi {
+	qcom,mdss_dsi_ctrl0@1ac8000 {
+		vdd-supply = <&bob_vreg>; /*1.8*/
+		vddio-supply = <&pm660_l11>;
+		/delete-property/ bklt-supply;
+	};
+};
+
+&mdss_dsi0 {
+	qcom,dsi-pref-prim-pan = <&dsi_edo_h162_320p_cmd>;
+	/delete-property/ qcom,platform-bklight-en-gpio;
+	/delete-property/ qcom,platform-enable-gpio;
+};
+
+&dsi_edo_h162_320p_cmd {
+	qcom,mdss-dsi-bl-pmic-control-type = "bl_ctrl_dcs";
+	qcom,panel-supply-entries = <&dsi_pm660_panel_pwr_supply>;
+};
+
+&dsi_edo_rm69090_368p_cmd {
+	qcom,mdss-dsi-bl-pmic-control-type = "bl_ctrl_dcs";
+	qcom,panel-supply-entries = <&dsi_pm660_panel_pwr_supply>;
+};
+
+&dsi_truly_rm69090_368p_cmd {
+	qcom,mdss-dsi-bl-pmic-control-type = "bl_ctrl_dcs";
+	qcom,panel-supply-entries = <&dsi_pm660_panel_pwr_supply>;
+};

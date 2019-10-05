@@ -1,0 +1,17 @@
+
+&soc {
+	gpio_keys {
+		stem1 {
+			label = "stem1";
+			gpios = <&msm_gpio 90 0x1>;
+			linux,input-type = <1>;
+			linux,code = <750>;
+			debounce-interval = <15>;
+			linux,can-disable;
+			gpio-key,wakeup;
+		};
+	/delete-node/ camera_focus;
+	/delete-node/ vol_up;
+	};
+};
+

@@ -1,0 +1,34 @@
+
+&i2c_1 {
+	pn553@28 {
+		compatible = "nxp,pn544";
+		reg = <0x28>;
+		nxp,pn544-irq = <&msm_gpio 50 0x00>;
+		nxp,pn544-ven = <&msm_gpio 36 0x00>;
+		nxp,pn544-fw-dwnld = <&msm_gpio 38 0x00>;
+		nxp,pn544-ese-pwr = <&msm_gpio 49 0x00>;
+		nfc,nq-clkreq = <&pm660_gpios 4 0x00>;
+		nfc,clk-src = "BBCLK3";
+//		nxp,pn544-iso-pwr-rst = <>;
+		interrupt-parent = <&msm_gpio>;
+		interrupts = <50 0>;
+		interrupt-names = "nfc_irq";
+		pinctrl-names = "nfc_active","nfc_suspend","default";
+		pinctrl-0 = <&nfcw_int_active &nfcw_disable_active>;
+		pinctrl-1 = <&nfcw_int_suspend &nfcw_disable_suspend>;
+		pinctrl-2 = <&nfc_clk_default>;
+		clocks = <&clock_rpm clk_bb_clk3_pin>;
+		clock-names = "ref_clk";
+	};
+	/delete-node/ nq@28;
+};
+
+&spi_2 {
+	status = "ok";
+	p61 {
+		compatible = "nxp,p61";
+		reg = <0x0>;
+		spi-max-frequency = <16000000>;
+	};
+};
+
