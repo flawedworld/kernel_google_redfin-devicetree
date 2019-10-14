@@ -1,4 +1,0 @@
-
-&bg_cdc {
-  /delete-property/ qcom,bg-speaker-connected;
-};

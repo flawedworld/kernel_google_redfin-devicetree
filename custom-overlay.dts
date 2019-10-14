@@ -15,9 +15,9 @@
 #include "custom-overlay-lcd.dtsi"
 #include "custom-overlay-tp.dtsi"
 #include "custom-overlay-key.dtsi"
-#include "custom-overlay-audio.dtsi"
 #include "custom-overlay-haptics.dtsi"
 #include "custom-overlay-charge.dtsi"
+#include "custom-overlay-modem.dtsi"
 #include "custom-overlay-nfc.dtsi"
 
 / {
