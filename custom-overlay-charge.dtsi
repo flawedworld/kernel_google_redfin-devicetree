@@ -11,7 +11,7 @@
 	qcom,fg-chg-term-current = <25>;
 	qcom,fg-force-load-profile;
 	qcom,fg-cutoff-voltage = <3400>;
-	qcom,fg-jeita-thresholds = <5 15 45 60>;
+	qcom,fg-jeita-thresholds = <(-2) 3 37 38>;
 	qcom,battery-thermal-coefficients = [d2 50 ff];
 	qcom,fg-recharge-voltage = <4350>;
 };
