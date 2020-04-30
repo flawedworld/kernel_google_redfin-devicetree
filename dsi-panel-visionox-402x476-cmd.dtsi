@@ -40,7 +40,7 @@
 			15 01 00 00 00 00 02 fe 00
 			39 00 00 00 00 00 05 2a 00 28 01 B9
 			39 01 00 00 00 00 05 2b 00 00 01 DB
-			15 01 00 00 00 00 02 13 00
+			15 01 00 00 00 00 02 12 00
 			15 01 00 00 00 00 02 35 00
 			15 01 00 00 00 00 02 53 20
 			05 01 00 00 50 00 01 11
@@ -61,7 +61,7 @@
 		qcom,mdss-dsi-te-dcs-command = <1>;
 		qcom,mdss-dsi-te-using-te-pin;
 		qcom,mdss-dsi-te-check-enable;
-		qcom,mdss-dsi-panel-timings = [65 12 0C 00 34 38 10 16 0F 03 04 00];
+		qcom,mdss-dsi-panel-timings = [65 19 0C 00 34 38 10 1F 0F 03 04 00];
 		qcom,mdss-dsi-t-clk-post = <0x05>;
 		qcom,mdss-dsi-t-clk-pre = <0x16>;
 		qcom,mdss-dsi-bl-min-level = <1>;
@@ -70,8 +70,16 @@
 		qcom,mdss-dsi-mdp-trigger = "none";
 		qcom,mdss-dsi-bl-pmic-control-type = "bl_ctrl_dcs";
 		qcom,mdss-dsi-reset-sequence = <0 15>, <1 15>;
-		qcom,mdss-dsi-panel-status-check-mode = "te_signal_check";
 		/* qcom,partial-update-enabled; */
 		/* qcom,panel-roi-alignment = <2 2 2 2 0 0>; */
+		qcom,esd-check-enabled;
+		qcom,mdss-dsi-panel-status-check-mode = "reg_read";
+		qcom,mdss-dsi-panel-status-command = [
+			06 01 00 01 05 00 01 0A
+		];
+		qcom,mdss-dsi-panel-status-command-state = "dsi_lp_mode";
+		qcom,mdss-dsi-panel-status-read-length = <1>;
+		qcom,mdss-dsi-panel-status-value = <0xB4>;
+		qcom,mdss-dsi-panel-max-error-count = <2>;
 	};
 };
