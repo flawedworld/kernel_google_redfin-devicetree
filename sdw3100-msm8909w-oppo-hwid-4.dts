@@ -68,7 +68,7 @@
 	qcom,hold-soc-while-full;
 	qcom,fg-force-load-profile;
 	qcom,fg-sys-term-current = <(-40)>;
-	qcom,fg-chg-term-current = <21>;
+	qcom,fg-chg-term-current = <26>;
 	/* qcom,fg-use-sw-esr; */
 	/* qcom,fg-esr-pulse-thresh-ma = <40>; */
 	/* qcom,fg-esr-meas-curr-ma = <60>; */
