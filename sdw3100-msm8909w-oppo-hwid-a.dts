@@ -61,7 +61,7 @@
 	qcom,battery-data = <&mtp_batterydata>;
 
 	qcom,fg-rsense-sel = <1>;	/* External rsense */
-	qcom,fg-cutoff-voltage = <3420>;
+	qcom,fg-cutoff-voltage = <3500>;
         qcom,fg-empty-voltage = <3380>;
 	qcom,fg-recharge-voltage = <4335>;
 
