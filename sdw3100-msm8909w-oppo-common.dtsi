@@ -691,7 +691,12 @@
 &pm660_coincell {
 	status = "disabled";
 };
-
+&apc_vreg_corner {
+	/delete-property/ qcom,cpr-voltage-ceiling;
+	/delete-property/ qcom,cpr-voltage-floor;
+	qcom,cpr-voltage-ceiling = <1102000 1278000 1352000>;
+	qcom,cpr-voltage-floor = <1102000 1102000 1206000>;
+};
 &pm660_charger {
 	qcom,fcc-max-ua = <875000>;
 	qcom,usb-icl-ua = <1500000>;
